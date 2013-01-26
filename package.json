@@ -1,0 +1,17 @@
+{
+  "author": "Nils Ekman <nisse.ekman@gmail.com> (http://nekman.se)",
+  "description": "Just my personal home page :)",
+  "name": "nekman.se",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nekman/nekman.se.git"
+  },
+  "dependencies": {
+    "requirejs": "~2.1.4",
+    "less": "*"
+  },
+  "engines": {
+    "node": "*"
+  }
+}
