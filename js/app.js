@@ -1,8 +1,9 @@
 /*!
-  Full source @ http://github.com/nekman/nekman.se
+  nekman.se - http://github.com/nekman/nekman.se
 */
 'use strict';
 
+// RequireJS configuration
 require.config({
     paths: {
       jquery: 'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min',
@@ -15,6 +16,7 @@ require.config({
       twitterController: 'twitter/twitterController',
       twitterView: 'twitter/twitterView'
     },
+    // Use RequireJS 'shim' to set the configuration for scripts that are not AMD compatible.
     shim: {
       backbone: {
         deps: ['jquery', 'underscore'],
@@ -32,6 +34,7 @@ require.config({
     }
 });
 
+// The "main method".
 require(['mainController'], function(mainController) {
     mainController.render();
 });
