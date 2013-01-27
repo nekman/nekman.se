@@ -11,6 +11,9 @@
       boxCollection: 'social/boxCollection',
       boxController: 'social/boxController',
       twitterController: 'twitter/twitterController',
-      twitterView: 'twitter/twitterView'
+      twitterView: 'twitter/twitterView',
+      twitterEntities: 'lib/twitterEntities',
+      stackExchangeController: 'stackexchange/stackExchangeController',
+      stackExchangeView: 'stackexchange/stackExchangeView'
   }
 })

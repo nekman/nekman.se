@@ -14,7 +14,8 @@ require.config({
       boxCollection: 'social/boxCollection',
       boxController: 'social/boxController',
       twitterController: 'twitter/twitterController',
-      twitterView: 'twitter/twitterView'
+      twitterView: 'twitter/twitterView',
+      twitterEntities: 'lib/twitterEntities'
     },
     // Use RequireJS 'shim' to set the configuration for scripts that are not AMD compatible.
     shim: {
