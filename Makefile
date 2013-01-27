@@ -8,7 +8,7 @@ LESS_DIR = less/
 css:
 	lessc ${LESS_DIR}main.less ${CSS_DIR}main.min.css -compress
  
-# minify JavaScript with UgilifyJS
+# minify JavaScript with RequireJS optimizer
 js:
 	r.js -o build.js
 
