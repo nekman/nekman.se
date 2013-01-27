@@ -9,6 +9,7 @@ define('controllers', function() {
   var controllers = [
     require('fontController'),
     require('twitterController'),
+    require('stackExchangeController'),
     require('boxController')
   ];
   
