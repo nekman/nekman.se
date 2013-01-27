@@ -1,16 +1,40 @@
+/* colors */
 @white: #fff;
-@font: 100 52px "lato";
+@lightred: #faa;
+@darkred: #a00;
+@selection: #ffb7b7;
+
+/* fonts */
+@headerfont: 100 52px "lato";
+@serif: 'Droid Serif';
+@helvetica: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+
+/*sizes*/
+@defaultwidth: 960px;
+@minwidth: 450px;
 
 body {
   background-color: @white;
   width: 100%;
+  margin-left:70px;
+}
+
+#main {  
+  &.defaultwidth {
+    width: @defaultwidth;
+    margin: 0 auto;
+  }
+  &.minwidth {
+    width: @minwidth;
+    margin: left;
+  }
 }
 
 header {
-  width: 960px;
+  width: @defaultwidth;
   margin: 0 auto;
   h1 {
-    font: @font;
+    font: @headerfont;
     letter-spacing: -2px;
     text-transform: uppercase;
     display: none;
@@ -20,12 +44,12 @@ header {
 h4 {
   display: block;
   font-weight: bold;
-  font-family: 'Droid Serif','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: @serif, @helvetica;
   font-size: 22.5px;
 }
 
 section {
-  font-family:'Droid Serif';
+  font-family:@serif;
   padding-top: 5px;
   font-size: 16px;
 }
@@ -48,14 +72,12 @@ li {
   transition-property: border;  
   transition-duration: .2s, .2s;
   transition: border-color 0.15s linear 0s;
-  .inner {
+  &.inner {
     display: inline-block;
   }
-}
-
-.box:hover { 
-  opacity: .8;  
-  padding: 2px;
+  &:hover { 
+    opacity: .8;
+  }
 }
 
 #social {
@@ -71,20 +93,38 @@ li {
   -moz-box-shadow: 5px 5px 2px #888;
   -webkit-box-shadow: 5px 5px 2px #888;
   box-shadow: 5px 5px 2px #888;
-
-  .tweet {
+  &.tweet {
     margin-top:10px;
   }
 }
 
 ::selection {
-  background: #ffb7b7; /* Safari */
-  }
+  background: @selection;
+}
 ::-moz-selection {
-  background: #ffb7b7; /* Firefox */
+  background: @selection;
 }
 
-#main {
-  width: 960px;
-  margin:0 auto;
+/* Custom github ribbon - http://unindented.org/articles/2009/10/github-ribbon-using-css-transforms/demo/ */
+.ribbon {
+  background-color: @darkred;
+  overflow: hidden;
+  position: absolute;
+  left: -3em;
+  top: 2.5em;
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-box-shadow: 0 0 1em #888;
+  -webkit-box-shadow: 0 0 1em #888;
+  a {
+    border: 1px solid @lightred;
+    color: #fff;
+    display: block;
+    font: bold 81.25% @helvetica;
+    margin: 0.05em 0 0.075em 0;
+    padding: 0.5em 3.5em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 0.5em #444;
+  }
 }
