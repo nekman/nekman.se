@@ -1,4 +1,4 @@
-body{background-color:#ffffff;width:100%;margin-left:70px;}
+body{background-color:#ffffff;width:100%;overflow:none;margin-left:5px;}
 #main.defaultwidth{width:960px;margin:0 auto;}
 #main.minwidth{width:450px;margin:left;}
 #main a{-webkit-transition:all 0.3s ease-in;transition:all 0.3s ease-in;-moz-transition:all 0.3s ease-in;-o-transition:all 0.3s ease-in;text-decoration:none;color:#3381d6;}#main a:active,#main a:hover,#main a:focus{-webkit-stroke-width:5.3px;-webkit-stroke-color:#ffffff;-webkit-fill-color:#ffffff;text-shadow:1px 0px 25px yellow;-webkit-transition:width 0.3s;transition:width 0.3s;-moz-transition:width 0.3s;-o-transition:width 0.3s;background-color:#3381d6;color:#ffffff;}

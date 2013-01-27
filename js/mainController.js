@@ -15,20 +15,24 @@ define('mainController', ['webfont', 'controllers', 'jquery'], function(webfont,
     this.$el = $('#main')
                 .addClass('defaultwidth')
                 .append($loading);
+
+    // Resize header and #main. Store them in memory.
+    this.$resizeNodes = $('header').addClass('defaultwidth').add(this.$el);
   },
 
   // Handle resize
   onresize = function() {
     var width = $window.width();
-
+    
     if (width < DEFAULT_WIDTH) {
-      this.$el.removeClass('defaultwidth').addClass('minwidth');
+      this.$resizeNodes.removeClass('defaultwidth').addClass('minwidth');
       return;
     }
 
-    if (!this.$el.hasClass('defaultwidth')) {
-      this.$el.addClass('defaultwidth').removeClass('minwidth');
+    if (!this.$resizeNodes.hasClass('defaultwidth')) {
+      this.$resizeNodes.addClass('defaultwidth').removeClass('minwidth');
     }
+    
   };
 
   // Public methods
