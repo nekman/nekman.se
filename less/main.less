@@ -3,6 +3,8 @@
 @lightred: #faa;
 @darkred: #a00;
 @selection: #ffb7b7;
+@gray: #888;
+@lightgray: #ddd;
 
 /* fonts */
 @headerfont: 100 52px "lato";
@@ -27,6 +29,26 @@ body {
   &.minwidth {
     width: @minwidth;
     margin: left;
+  }
+  a {
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    text-decoration: none;
+    color: #3381d6;
+    &:active, &:hover, &:focus {
+      -webkit-stroke-width: 5.3px;
+      -webkit-stroke-color: @white;
+      -webkit-fill-color: @white;
+      text-shadow: 1px 0px 25px yellow;
+      -webkit-transition: width 0.3s;
+      transition: width 0.3s;
+      -moz-transition: width 0.3s;
+      -o-transition: width 0.3s;
+      background-color: #3381d6;
+      color: @white;
+    }
   }
 }
 
@@ -83,17 +105,37 @@ li {
 #social {
   margin-top: 10px;
   display: table;
+  float: left;
 }
 
-#tweets {
+#stackexchange {
+  .score {
+    padding: 2px;
+    margin-right: 10px;
+  }
+  .accepted {
+    background-color: rgb(111, 191, 77);    
+  }
+  .answer {
+    margin-top: 5px;
+  }
+}
+
+#tweets, #stackexchange {
   width: 400px;  
   margin-top: 10px;
   display: table;
   padding: 5px;
-  -moz-box-shadow: 5px 5px 2px #888;
-  -webkit-box-shadow: 5px 5px 2px #888;
-  box-shadow: 5px 5px 2px #888;
-  &.tweet {
+  -moz-box-shadow: 5px 5px 2px @gray;
+  -webkit-box-shadow: 5px 5px 2px @gray;
+  box-shadow: 5px 5px 2px @gray;
+  float: left;
+  margin-right: 10px;  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border:1px solid @lightgray;
+  .tweet {
     margin-top:10px;
   }
 }
@@ -110,15 +152,15 @@ li {
   background-color: @darkred;
   overflow: hidden;
   position: absolute;
-  left: -3em;
+  right: -3em;
   top: 2.5em;
-  -moz-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  -moz-box-shadow: 0 0 1em #888;
-  -webkit-box-shadow: 0 0 1em #888;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-box-shadow: 0 0 1em @gray;
+  -webkit-box-shadow: 0 0 1em @gray;
   a {
     border: 1px solid @lightred;
-    color: #fff;
+    color: @white;
     display: block;
     font: bold 81.25% @helvetica;
     margin: 0.05em 0 0.075em 0;
