@@ -1,40 +1,48 @@
 /*
-  Main app
-*/
+ * The main controller
+ */
 define('mainController', ['webfont', 'controllers', 'jquery'], function(webfont, controllers, $) {
-  var $header = $('h1'),
-      $loading = $('<div>')
+  // Private variables
+  var DEFAULT_WIDTH = 960,
+    $window = $(window),
+    $header = $('h1'),
+    $loading = $('<div>')
                   .append($('<i>').addClass('icon-spinner icon-spin'))
                   .append(' Loading content... '),
-      webFontDeferred = new $.Deferred(),
 
+  // Constructor
   MainController = function() {
-    this.$el = $('#main').append($loading);
+    this.$el = $('#main')
+                .addClass('defaultwidth')
+                .append($loading);
+  },
 
-    webfont.load({
-      google: {
-        families: [
-          'Cantarell',
-          'Droid+Serif',
-          'Lato:100:latin'
-        ]
-      },
-      active: function() {
-        webFontDeferred.resolve();
-      }
-    });
+  // Handle resize
+  onresize = function() {
+    var width = $window.width();
 
-    controllers.promises.push(webFontDeferred);
+    if (width < DEFAULT_WIDTH) {
+      this.$el.removeClass('defaultwidth').addClass('minwidth');
+      return;
+    }
+
+    if (!this.$el.hasClass('defaultwidth')) {
+      this.$el.addClass('defaultwidth').removeClass('minwidth');
+    }
   };
 
+  // Public methods
   MainController.prototype = {
     constructor: MainController,
 
     render: function() {
+      window.onresize = $.proxy(onresize, this);
+      $window.trigger('resize');
+
       var $el = this.$el,
 
       internalRender = function() {
-        controllers.all.forEach(function(controller) {
+        _.each(controllers.viewControllers, function(controller) {
           $el.append(controller.render().$el);
         });
 
@@ -42,6 +50,7 @@ define('mainController', ['webfont', 'controllers', 'jquery'], function(webfont,
         $header.show();
       };
 
+      // When all promises is resloved, render all views.
       $.when(controllers.promises).done(internalRender);
     }
   };
