@@ -1,9 +1,9 @@
 /*
  * Collection of all controllers (except the main controller).
- * 
+ *
  * Makes it easier to run same methods on all controllers.
  */
-define('controllers', ['underscore'], function(_) {
+define('controllers', function() {
   'use strict';
 
   var controllers = [
@@ -11,7 +11,9 @@ define('controllers', ['underscore'], function(_) {
     require('twitterController'),
     require('stackExchangeController'),
     require('boxController')
-  ];
+  ],
+
+  _ = require('underscore');
   
   return {
     /*
