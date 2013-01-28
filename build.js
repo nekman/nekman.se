@@ -3,6 +3,7 @@
   out: 'js/app.min.js',
   name: 'app',
   paths: {
+      /* Use ':empty' for CDN dependencies */
       jquery: 'empty:',
       underscore: 'empty:',
       backbone: 'empty:',
@@ -14,6 +15,7 @@
       twitterView: 'twitter/twitterView',
       twitterEntities: 'lib/twitterEntities',
       stackExchangeController: 'stackexchange/stackExchangeController',
-      stackExchangeView: 'stackexchange/stackExchangeView'
+      stackExchangeView: 'stackexchange/stackExchangeView',
+      controllers: 'controllers'
   }
 })
