@@ -6,7 +6,7 @@ define('windowResizeHandler', ['jquery'], function($) {
 	// Handle resize
 	onresize = function() {
 		var width = $window.width();
-
+		
 		if (width < DEFAULT_WIDTH) {
 			$resizeNodes.removeClass('defaultwidth').addClass('minwidth');
 			return;
@@ -18,8 +18,8 @@ define('windowResizeHandler', ['jquery'], function($) {
 
 	return {
 		watch: function($nodes) {
-			if (!$nodes instanceof $) {
-				$nodes = $();
+			if (!($nodes instanceof $)) {
+				throw 'expected jQuery node';
 			}
 
 			$resizeNodes = $nodes.addClass('defaultwidth');

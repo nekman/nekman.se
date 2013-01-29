@@ -9,7 +9,11 @@
   },
   "dependencies": {
     "requirejs": "~2.1.4",
-    "less": "*"
+    "define": "1.0.0",
+    "less": "*",
+    "jasmine-node": "*",
+    "jquery": "*",
+    "jsdom": "*"
   },
   "engines": {
     "node": "*"

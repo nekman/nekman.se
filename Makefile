@@ -12,7 +12,11 @@ css:
 js:
 	r.js -o build.js
 
-all: css js
+#run specs with jasmine
+test: 
+	jasmine-node spec --verbose
+
+all: css js test
 
 .PHONY: css js
 

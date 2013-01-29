@@ -3,7 +3,7 @@
   out: 'js/app.min.js',
   name: 'app',
   paths: {
-      /* Use ':empty' for CDN dependencies */
+      /* Use 'empty:' for CDN dependencies */
       jquery: 'empty:',
       underscore: 'empty:',
       backbone: 'empty:',
