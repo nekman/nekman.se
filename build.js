@@ -16,6 +16,9 @@
       twitterEntities: 'lib/twitterEntities',
       stackExchangeController: 'stackexchange/stackExchangeController',
       stackExchangeView: 'stackexchange/stackExchangeView',
-      controllers: 'controllers'
+      fontController: 'fontController',
+      controllers: 'controllers',
+      mainController: 'main/mainController',
+      mainView: 'main/mainView'
   }
 })
