@@ -10,7 +10,7 @@ LESS_DIR = less/
 css:
 	lessc ${LESS_DIR}main.less ${CSS_DIR}main.css
 	cat ${CSS_DIR}font-awesome.min.css ${CSS_DIR}main.css | cleancss -o ${CSS_DIR}app.min.css
-	rm -rf ${CSS_DIR}main.css
+	rm -f ${CSS_DIR}main.css
  
 # minify JavaScript with RequireJS optimizer
 js:
