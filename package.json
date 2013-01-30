@@ -12,6 +12,7 @@
     "define": "1.0.0",
     "less": "*",
     "jasmine-node": "*",
+    "clean-css": "*",
     "jquery": "*",
     "jsdom": "*"
   },

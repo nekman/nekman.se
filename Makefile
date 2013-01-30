@@ -4,9 +4,13 @@ CSS_DIR = css/
 # LESS Directory
 LESS_DIR = less/
  
-# minify CSS with LESSC
+# compile CSS with LESSC 
+# minify font-awesome.min.css and main.css with cleancss
+# remove output file
 css:
-	lessc ${LESS_DIR}main.less ${CSS_DIR}main.min.css -compress
+	lessc ${LESS_DIR}main.less ${CSS_DIR}main.css
+	cat ${CSS_DIR}font-awesome.min.css ${CSS_DIR}main.css | cleancss -o ${CSS_DIR}app.min.css
+	rm -rf ${CSS_DIR}main.css
  
 # minify JavaScript with RequireJS optimizer
 js:
@@ -18,5 +22,5 @@ test:
 
 all: css js test
 
-.PHONY: css js
+.PHONY: css js test
 
