@@ -3,18 +3,19 @@
  *
  * Makes it easier to run same methods on all controllers.
  */
-define('controllers', function() {
+define('controllers', [
+  'twitterController',
+  'fontController',
+  'stackExchangeController',
+  'boxController',
+  'underscore'
+  ], function() {
   'use strict';
 
-  var controllers = [
-    require('fontController'),
-    require('twitterController'),
-    require('stackExchangeController'),
-    require('boxController')
-  ],
+  var args = Array.prototype.slice.call(arguments), // convert arguments to array
+      _ = args.pop(), //Last argument = underscore
+      controllers = args; // rest of the array = controllers
 
-  _ = require('underscore');
-  
   return {
     /*
      * The collection of all promises
