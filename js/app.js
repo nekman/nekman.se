@@ -18,7 +18,10 @@ require.config({
       twitterEntities: 'lib/twitterEntities',
       stackExchangeController: 'stackexchange/stackExchangeController',
       stackExchangeView: 'stackexchange/stackExchangeView',
-      controllers: 'controllers'
+      fontController: 'fontController',
+      controllers: 'controllers',
+      mainController: 'main/mainController',
+      mainView: 'main/mainView'
     },
     // Use RequireJS 'shim' to set the configuration for scripts that are not AMD compatible.
     shim: {
