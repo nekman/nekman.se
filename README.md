@@ -1,5 +1,6 @@
 nekman.se
 =========
+[![Build Status](https://travis-ci.org/nekman/nekman.se.png?branch=master)](https://travis-ci.org/nekman/nekman.se)
 
 My personal web page, <a href="http://nekman.se">nekman.se</a>. 
 <br/><br/>
