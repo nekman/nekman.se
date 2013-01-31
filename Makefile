@@ -18,7 +18,7 @@ js:
 
 #run specs with jasmine
 test: 
-	jasmine-node spec --verbose
+	jasmine-node test --verbose
 
 all: css js test
 
