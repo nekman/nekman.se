@@ -17,7 +17,7 @@
       stackExchangeController: 'stackexchange/stackExchangeController',
       stackExchangeView: 'stackexchange/stackExchangeView',
       fontController: 'fontController',
-      controllers: 'controllers',
+      controllerCollection: 'controllerCollection',
       mainController: 'main/mainController',
       mainView: 'main/mainView'
   }

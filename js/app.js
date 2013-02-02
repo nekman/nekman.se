@@ -10,6 +10,8 @@ require.config({
       underscore: 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min',
       backbone: 'https://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.9/backbone-min',
       webfont: 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont',
+      fontController: 'fontController',
+      controllerCollection: 'controllerCollection',
       boxView: 'social/boxView',
       boxCollection: 'social/boxCollection',
       boxController: 'social/boxController',
@@ -18,8 +20,6 @@ require.config({
       twitterEntities: 'lib/twitterEntities',
       stackExchangeController: 'stackexchange/stackExchangeController',
       stackExchangeView: 'stackexchange/stackExchangeView',
-      fontController: 'fontController',
-      controllers: 'controllers',
       mainController: 'main/mainController',
       mainView: 'main/mainView'
     },
