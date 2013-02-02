@@ -18,6 +18,9 @@
     "underscore": "1.4.4",
     "backbone": "0.9.10"
   },
+  "scripts": {
+    "test": "jasmine-node test --verbose" 
+  },
   "engines": {
     "node": "~0.8"
   }
