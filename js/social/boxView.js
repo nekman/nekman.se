@@ -1,6 +1,6 @@
 define('boxView', ['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
   'use strict';
-
+  
   var template = _.template('icon-<%= name %> icon-4x'),
 
   getIcon = function(name) {
