@@ -1,10 +1,10 @@
 /*
- * The main view 
+ * The main view
  */
  
 define('mainView', ['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
   'use strict';
-
+  
   //TODO: Backbone.Model
   var mainModel = {
     name: '@nekman',
@@ -18,9 +18,9 @@ define('mainView', ['jquery', 'underscore', 'backbone'], function($, _, Backbone
     el: '#main',
 
     initialize: function() {
-      this.$header = $('header'),
+      this.$header = $('header');
       this.$footer = $('<footer>').append($('<span>').text(this.model.name + ' - ' + this.model.year));
-      this.$loading =  $('<div>').append($('<i>')
+      this.$loading =  $('<div id="loading">').append($('<i>')
               .addClass('icon-spinner icon-spin icon-4x'))
               .append(this.model.texts.loading);
 
