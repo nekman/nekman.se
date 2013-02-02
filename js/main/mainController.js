@@ -2,7 +2,7 @@
  * The main controller
  */
 define('mainController', [
-  'controllers',
+  'controllerCollection',
   'jquery',
   'mainView',
   'windowResizeHandler'], function(controllers, $, mainView, resizeHandler) {

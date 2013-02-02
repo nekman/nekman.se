@@ -3,7 +3,7 @@
  *
  * Makes it easier to run same methods on all controllers.
  */
-define('controllers', [
+define('controllerCollection', [
   'twitterController',
   'fontController',
   'stackExchangeController',
