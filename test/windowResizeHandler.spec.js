@@ -1,7 +1,7 @@
 describe('window resize handler', function() {
 	require('./testUtils').setup();
 	
-	var sut = require('../js/windowResizeHandler'),
+	var resizeHandler = require('../js/windowResizeHandler'),
 		$window = $(window),
 		$node;
 				
@@ -11,18 +11,18 @@ describe('window resize handler', function() {
 
 	it('should throw if node != instanceof jQuery', function() {
 		var $el = [];
-		expect(function() { sut.watch($el); }).toThrow();
+		expect(function() { resizeHandler.watch($el); }).toThrow();
 	});
 
 	it('should add .defaultwidth to nodes that are watched', function() {
-		sut.watch($node);
+		resizeHandler.watch($node);
 
 		expect($node.hasClass('defaultwidth')).toBe(true);
 	});
 
 	describe('resize window', function() {
 		it('should add .minwidth if window width < 960px', function() {
-			sut.watch($node);
+			resizeHandler.watch($node);
 
 			// Override jQuery.width()
 			$.fn.width = function() {
