@@ -1,4 +1,9 @@
-define('boxController', ['boxView', 'boxCollection', 'jquery', 'underscore'], function(BoxView, boxCollection, $, _) {
+define([
+  './boxView',
+  './boxCollection',
+  'jquery',
+  'underscore'], function(BoxView, boxCollection, $, _) {
+
   'use strict';
 
   var BoxController = function() {

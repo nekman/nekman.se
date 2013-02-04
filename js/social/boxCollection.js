@@ -1,4 +1,4 @@
-define('boxCollection', ['underscore', 'backbone'], function(_, Backbone) {
+define(['underscore', 'backbone'], function(_, Backbone) {
 	'use strict';
 	
 	var BoxModel = Backbone.Model.extend({}),

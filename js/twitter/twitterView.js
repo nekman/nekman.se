@@ -1,4 +1,9 @@
-define('twitterView', ['jquery', 'underscore', 'backbone', 'twitterEntities'], function($, _, Backbone, twitterEntities) {
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  './../lib/twitterEntities'], function($, _, Backbone, twitterEntities) {
+
   'use strict';
   
   return Backbone.View.extend({

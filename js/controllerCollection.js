@@ -3,11 +3,11 @@
  *
  * Makes it easier to run same methods on all controllers.
  */
-define('controllerCollection', [
-  'twitterController',
-  'fontController',
-  'stackExchangeController',
-  'boxController',
+define([
+  './twitter/twitterController',
+  './fontController',
+  './stackexchange/stackExchangeController',
+  './social/boxController',
   'underscore'
   ], function() {
   'use strict';

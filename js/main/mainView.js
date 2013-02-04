@@ -2,7 +2,7 @@
  * The main view
  */
  
-define('mainView', ['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
+define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
   'use strict';
   
   //TODO: Backbone.Model

@@ -1,11 +1,11 @@
 /*
  * The main controller
  */
-define('mainController', [
-  'controllerCollection',
+define([
+  '../controllerCollection',
   'jquery',
-  'mainView',
-  'windowResizeHandler'], function(controllers, $, mainView, resizeHandler) {
+  './mainView',
+  '../windowResizeHandler'], function(controllers, $, mainView, resizeHandler) {
 
   // Constructor
   MainController = function() {

@@ -1,4 +1,7 @@
-define('stackExchangeController', ['stackExchangeView', 'jquery', 'underscore'], function(StackExchangeView, $, _) {
+define([
+  './stackExchangeView',
+  'jquery',
+  'underscore'], function(StackExchangeView, $, _) {
   'use strict';
 
   return {

@@ -9,19 +9,21 @@ describe('window resize handler', function() {
 		$node = $('<div>');
 	});
 
-	it('should throw if node != instanceof jQuery', function() {
+	it('throws if node != instanceof jQuery', function() {
 		var $el = [];
 		expect(function() { resizeHandler.watch($el); }).toThrow();
 	});
 
-	it('should add .defaultwidth to nodes that are watched', function() {
-		resizeHandler.watch($node);
+	describe('window.width is > 960px', function () {
+		it('adds .defaultwidth to nodes that are watched', function() {
+			resizeHandler.watch($node);
 
-		expect($node.hasClass('defaultwidth')).toBe(true);
+			expect($node.hasClass('defaultwidth')).toBe(true);
+		});
 	});
-
+	
 	describe('resize window', function() {
-		it('should add .minwidth if window width < 960px', function() {
+		it('adds .minwidth if window width < 960px', function() {
 			resizeHandler.watch($node);
 
 			// Override jQuery.width()

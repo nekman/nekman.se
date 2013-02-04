@@ -1,4 +1,4 @@
-define('windowResizeHandler', ['jquery'], function($) {
+define(['jquery'], function($) {
 	var DEFAULT_WIDTH = 960,
 		$window = $(window),
 		$resizeNodes,

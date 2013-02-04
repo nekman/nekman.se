@@ -1,4 +1,4 @@
-define('fontController', ['webfont', 'jquery'], function(webfont, $) {
+define(['webfont', 'jquery'], function(webfont, $) {
 	var webFontDeferred = new $.Deferred();
 
 	webfont.load({

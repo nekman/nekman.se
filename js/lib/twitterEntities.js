@@ -9,7 +9,7 @@
 //- Minor refactoring
 //- Added semi colons
 
-define('twitterEntities', ['jquery'], function($) {
+define(['jquery'], function($) {
     'use strict';
 
     var escapeHTML = function(text) {

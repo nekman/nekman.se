@@ -1,4 +1,8 @@
-define('twitterController', ['twitterView', 'jquery', 'underscore'], function(TwitterView, $, _) {
+define([
+  './twitterView',
+  'jquery',
+  'underscore'], function(TwitterView, $, _) {
+    
   'use strict';
 
   return {

@@ -1,4 +1,4 @@
-define('stackExchangeView', ['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
+define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 
 	var compiled = _.template(
 		'<div class="answer">'+
