@@ -1,34 +1,39 @@
-define([
-  './boxView',
-  './boxCollection',
-  'jquery',
-  'underscore'], function(BoxView, boxCollection, $, _) {
+'use strict';
 
-  'use strict';
+define(
+  [
+    './boxView',
+    './boxCollection',
+    'jquery',
+    'underscore'
+  ],
 
-  var BoxController = function() {
-    this.promise = boxCollection.fetch();
-    this.$el = $('<section>').attr({id : 'social'});
-  },
+  function(BoxView, boxCollection, $, _) {
 
-  appendBox = function(boxModel) {
-    var boxView = new BoxView({ model: boxModel });
-    this.$el.append(boxView.render().el);
-  };
+    var BoxController = function() {
+      this.promise = boxCollection.fetch();
+      this.$el = $('<section>').attr({id : 'social'});
+    },
 
-  BoxController.prototype = {
-    constructor: BoxController,
+    appendBox = function(boxModel) {
+      var boxView = new BoxView({ model: boxModel });
+      this.$el.append(boxView.render().el);
+    };
 
-    render: function() {
-      var self = this;
+    BoxController.prototype = {
+      constructor: BoxController,
 
-      this.promise.done(function() {
-        boxCollection.forEach($.proxy(appendBox, self));
-      });
+      render: function() {
+        var self = this;
 
-      return this;
-    }
-  };
+        this.promise.done(function() {
+          boxCollection.forEach($.proxy(appendBox, self));
+        });
 
-  return new BoxController();
-});
+        return this;
+      }
+    };
+
+    return new BoxController();
+  }
+);

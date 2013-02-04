@@ -1,33 +1,43 @@
-define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
-  'use strict';
-  
-  var template = _.template('icon-<%= name %> icon-4x'),
+'use strict';
 
-  getIcon = function(name) {
-    return template({ name: name.toLowerCase() });
-  };
+define(
+  [
+    'jquery',
+    'underscore',
+    'backbone'
+  ],
 
-  return Backbone.View.extend({
-    tagName: 'div',
-    className: 'box',
+  function($, _, Backbone) {
+    
+    var template = _.template('icon-<%= name %> icon-4x'),
 
-    events: {
-      click : 'click',
-      tap : 'click'
-    },
+    getIcon = function(name) {
+      return template({ name: name.toLowerCase() });
+    };
 
-    render: function() {
-        var model = this.model.attributes;
+    return Backbone.View.extend({
+      tagName: 'div',
+      className: 'box',
 
-        this.$el.css({ backgroundColor : model.color })
-                .append($('<h4>').text(model.name))
-                .append($('<div>').addClass(getIcon(model.icon || model.name)));
+      events: {
+        click : 'click',
+        tap : 'click'
+      },
 
-        return this;
-    },
+      render: function() {
+          var model = this.model.attributes;
 
-    click: function() {
-      location.href = this.model.get('url');
-    }
-  });
-});
+          this.$el.css({ backgroundColor : model.color })
+                  .append($('<h4>').text(model.name))
+                  .append($('<div>').addClass(getIcon(model.icon || model.name)));
+
+          return this;
+      },
+
+      click: function() {
+        location.href = this.model.get('url');
+      }
+    });
+
+  }
+);

@@ -1,21 +1,27 @@
-define([
-  'jquery',
-  'underscore',
-  'backbone',
-  './../lib/twitterEntities'], function($, _, Backbone, twitterEntities) {
+'use strict';
 
-  'use strict';
+define(
+  [
+    './../lib/twitterEntities',
+    'jquery',
+    'underscore',
+    'backbone'
+  ],
   
-  return Backbone.View.extend({
-    el: '#tweets',
+  function(twitterEntities, $, _, Backbone) {
 
-    render: function() {
-      
-      this.$el.append(
-        $('<div>').addClass('tweet')
-                  .html(twitterEntities.linkify(this.model)));
+    return Backbone.View.extend({
+      el: '#tweets',
 
-      return this;
-    }
-  });
-});
+      render: function() {
+        
+        this.$el.append(
+          $('<div>').addClass('tweet')
+                    .html(twitterEntities.linkify(this.model)));
+
+        return this;
+      }
+    });
+  }
+
+);

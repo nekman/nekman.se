@@ -1,31 +1,37 @@
-define([
-  './stackExchangeView',
-  'jquery',
-  'underscore'], function(StackExchangeView, $, _) {
-  'use strict';
+'use strict';
 
-  return {
-    $el: $('<section>').attr({ id: 'stackexchange' }),
+define(
+  [
+    './stackExchangeView',
+    'jquery',
+    'underscore'
+  ],
 
-    promise: $.ajax({
-      url: 'http://api.stackoverflow.com/1.1/users/141363/answers?pagesize=5',
-      dataType: 'jsonp',
-      jsonp: 'jsonp'
-    }),
+  function(StackExchangeView, $, _) {
+  
+    return {
+      $el: $('<section>').attr({ id: 'stackexchange' }),
 
-    render: function() {
-      this.$el.append($('<h4>').text('Latest answers on stackoverflow'));
+      promise: $.ajax({
+        url: 'http://api.stackoverflow.com/1.1/users/141363/answers?pagesize=5',
+        dataType: 'jsonp',
+        jsonp: 'jsonp'
+      }),
 
-      $('#main').append(this.$el);
+      render: function() {
+        this.$el.append($('<h4>').text('Latest answers on stackoverflow'));
 
-      this.promise.done(function(all) {
-        _.each(_.first(all.answers, 5), function(answer) {
-          var view = new StackExchangeView({ model : answer });
-          view.render();
+        $('#main').append(this.$el);
+
+        this.promise.done(function(all) {
+          _.each(_.first(all.answers, 5), function(answer) {
+            var view = new StackExchangeView({ model : answer });
+            view.render();
+          });
         });
-      });
 
-      return this;
-    }
-  };
-});
+        return this;
+      }
+    };
+  }
+);

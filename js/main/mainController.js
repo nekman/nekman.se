@@ -1,39 +1,45 @@
 /*
  * The main controller
  */
-define([
-  '../controllerCollection',
-  'jquery',
-  './mainView',
-  '../windowResizeHandler'], function(controllers, $, mainView, resizeHandler) {
 
-  // Constructor
-  MainController = function() {
-    // Watch header and #main element if window resizes.
-    var $resizeNodes = mainView.$header.add(mainView.$el);
-    resizeHandler.watch($resizeNodes);
-  },
+define(
+  
+  [
+    'jquery',
+    './mainView',
+    '../controllerCollection',
+    '../windowResizeHandler'
+  ],
 
-  renderViewControllers = function() {
-    // Render all view controllers, add them to mainView
-    _.each(controllers.viewControllers, function(controller) {
-      mainView.$el.append(controller.render().$el);
-    });
-    
-    mainView.render();
-  };
+  function($, mainView, controllers, resizeHandler) {
+    // Constructor
+    var MainController = function() {
+      // Watch header and #main element if window resizes.
+      var $resizeNodes = mainView.$header.add(mainView.$el);
+      resizeHandler.watch($resizeNodes);
+    },
 
-  // Public methods
-  MainController.prototype = {
-    constructor: MainController,
+    renderViewControllers = function() {
+      // Render all view controllers, add them to mainView
+      _.each(controllers.viewControllers, function(controller) {
+        mainView.$el.append(controller.render().$el);
+      });
+      
+      mainView.render();
+    };
 
-    render: function() {
-      // When all controllers is loaded, render the view controllers.
-      $.when(controllers.promises).done(renderViewControllers);
+    // Public methods
+    MainController.prototype = {
+      constructor: MainController,
 
-      return this;
-    }
-  };
+      render: function() {
+        // When all controllers is loaded, render the view controllers.
+        $.when(controllers.promises).done(renderViewControllers);
 
-  return new MainController();
-});
+        return this;
+      }
+    };
+
+    return new MainController();
+  }
+);

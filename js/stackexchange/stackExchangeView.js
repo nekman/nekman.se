@@ -1,23 +1,33 @@
-define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
+'use strict';
 
-	var compiled = _.template(
-		'<div class="answer">'+
-			'<b class="score <%= accepted ? "accepted" : "" %>">' +
-				'<%= score %>' +
-			'</b>'+
-			'<a href="http://stackoverflow.com/questions/<%= question_id %>/#<%= answer_id %>">'+
-				'<%= title %>'+
-			'</a>'+
-		'</div>'
-	);
+define(
+	[
+		'jquery',
+		'underscore',
+		'backbone'
+	],
 
-	return Backbone.View.extend({
-		el: '#stackexchange',
+	function($, _, Backbone) {
 
-		render: function() {
-			this.$el.append(compiled(this.model));
+		var compiled = _.template(
+			'<div class="answer">'+
+				'<b class="score <%= accepted ? "accepted" : "" %>">' +
+					'<%= score %>' +
+				'</b>'+
+				'<a href="http://stackoverflow.com/questions/<%= question_id %>/#<%= answer_id %>">'+
+					'<%= title %>'+
+				'</a>'+
+			'</div>'
+		);
 
-			return this;
-		}
-	});
-});
+		return Backbone.View.extend({
+			el: '#stackexchange',
+
+			render: function() {
+				this.$el.append(compiled(this.model));
+
+				return this;
+			}
+		});
+	}
+);
