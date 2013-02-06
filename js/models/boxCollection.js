@@ -1,4 +1,6 @@
-/*Box collection */
+/*
+ * Box collection
+ */
 
 define(
 	[

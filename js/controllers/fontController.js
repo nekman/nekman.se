@@ -7,6 +7,7 @@ define(
 	],
 
 	function(webfont, $) {
+		
 		var webFontDeferred = new $.Deferred();
 
 		webfont.load({

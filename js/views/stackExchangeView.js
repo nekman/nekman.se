@@ -1,14 +1,17 @@
+/*
+ *	View for stackoverflow answer
+ */
 'use strict';
 
 define(
 	[
+		'text!./../../templates/stackExchange.html',
 		'jquery',
 		'underscore',
-		'backbone',
-		'text!./../../templates/stackExchange.html'
+		'backbone'
 	],
 
-	function($, _, Backbone, stackExhangeTemplate) {
+	function(stackExhangeTemplate, $, _, Backbone) {
 
 		var compiled = _.template(stackExhangeTemplate);
 

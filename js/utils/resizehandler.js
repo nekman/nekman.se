@@ -6,9 +6,11 @@ define(
 	],
 
 	function($) {
+		
 		var DEFAULT_WIDTH = 960,
-			$window = $(window),
-			$resizeNodes,
+
+				$window = $(window),
+				$resizeNodes,
 		
 		// Handle resize
 		onresize = function() {

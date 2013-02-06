@@ -24,7 +24,6 @@ define(
 			},
 
 			sync: function(method, model, options) {
-
 				var params = _.extend({
 					url: model.url(),
 					dataType: 'jsonp',

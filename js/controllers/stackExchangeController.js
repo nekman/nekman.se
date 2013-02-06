@@ -11,7 +11,6 @@ define(
   function(StackExchangeView, StackExchangeCollection, $, _) {
 
     var StackExchangeController = function() {
-
       var stackExchangeCollection = new StackExchangeCollection({ userId : '141363' });
       this.promise = stackExchangeCollection.fetch();
     };
