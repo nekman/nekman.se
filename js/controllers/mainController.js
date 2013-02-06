@@ -9,10 +9,11 @@ define(
     './../views/mainView',
     './../utils/applicationControllers',
     './../utils/resizeHandler',
-    'jquery'
+    'jquery',
+    'underscore'
   ],
 
-  function(mainView, controllers, resizeHandler, $) {
+  function(mainView, controllers, resizeHandler, $, _) {
     // Constructor
     var MainController = function() {
       // Watch header and #main element if window resizes.
