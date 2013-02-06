@@ -1,7 +1,7 @@
 require('../testUtils').setup();
 
 describe('main view', function() {
-	var mainView = require('../../js/main/mainView');
+	var mainView = require('../../js/views/mainView');
 
 	describe('loading', function() {
 		var $loading = mainView.$el.find('#loading');

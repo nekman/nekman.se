@@ -8,10 +8,10 @@
  
 define(
   [
-    './twitter/twitterController',
-    './fontController',
-    './stackexchange/stackExchangeController',
-    './social/boxController',
+    './../controllers/twitterController',
+    './../controllers/fontController',
+    './../controllers/stackExchangeController',
+    './../controllers/boxController',
     'underscore'
   ],
 

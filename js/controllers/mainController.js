@@ -2,16 +2,17 @@
  * The main controller
  */
 
+'use strict';
+
 define(
-  
   [
-    'jquery',
-    './mainView',
-    '../controllerCollection',
-    '../windowResizeHandler'
+    './../views/mainView',
+    './../utils/applicationControllers',
+    './../utils/resizeHandler',
+    'jquery'
   ],
 
-  function($, mainView, controllers, resizeHandler) {
+  function(mainView, controllers, resizeHandler, $) {
     // Constructor
     var MainController = function() {
       // Watch header and #main element if window resizes.

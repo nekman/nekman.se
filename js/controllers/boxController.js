@@ -2,8 +2,8 @@
 
 define(
   [
-    './boxView',
-    './boxCollection',
+    './../views/boxView',
+    './../models/boxCollection',
     'jquery',
     'underscore'
   ],

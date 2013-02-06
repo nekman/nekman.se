@@ -42,7 +42,7 @@ define(
             
             $.each(tweet.entities.hashtags, function(i,entry) {
                 buildIndexMap(entry , function(text) {
-                    return "<a href='http://twitter.com/search?q="+escape("#"+entry.text)+"'>"+escapeHTML(text)+"</a>";
+                  return "<a href='http://twitter.com/search?q="+escape("#"+entry.text)+"'>"+escapeHTML(text)+"</a>";
                 });
             });
             

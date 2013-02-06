@@ -5,7 +5,6 @@
 'use strict';
 
 define(
-
   [
     'jquery',
     'underscore',

@@ -7,11 +7,7 @@ define(
 	],
 
 	function(_, Backbone) {
-
-		var BoxModel = Backbone.Model.extend({}),
-
-		BoxCollection = Backbone.Collection.extend({
-			model: BoxModel,
+		var BoxCollection = Backbone.Collection.extend({
 			url : 'data/social.json'
 		});
 

@@ -1,7 +1,7 @@
-describe('window resize handler', function() {
+describe('resize handler', function() {
 	require('./testUtils').setup();
 	
-	var resizeHandler = require('../js/windowResizeHandler'),
+	var resizeHandler = require('../js/utils/resizeHandler'),
 		$window = $(window),
 		$node;
 				

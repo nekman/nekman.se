@@ -2,7 +2,7 @@
 
 define(
   [
-    './twitterView',
+    './../views/twitterView',
     'jquery',
     'underscore'
   ],

@@ -18,6 +18,7 @@ define(
 				$resizeNodes.removeClass('defaultwidth').addClass('minwidth');
 				return;
 			}
+			
 			if (!$resizeNodes.hasClass('defaultwidth')) {
 				$resizeNodes.addClass('defaultwidth').removeClass('minwidth');
 			}

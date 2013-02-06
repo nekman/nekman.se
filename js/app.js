@@ -30,6 +30,6 @@ require.config({
 });
 
 // The "main method".
-require(['main/mainController'], function(mainController) {
+require(['controllers/mainController'], function(mainController) {
     mainController.render();
 });
