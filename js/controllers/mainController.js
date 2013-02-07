@@ -13,12 +13,13 @@ define(
     'underscore'
   ],
 
-  function(mainView, controllers, resizeHandler, $, _) {
+  function(mainView, controllers, ResizeHandler, $, _) {
     // Constructor
     var MainController = function() {
       // Watch header and #main element if window resizes.
       var $resizeNodes = mainView.$header.add(mainView.$el);
-      resizeHandler.watch($resizeNodes);
+                
+      new ResizeHandler({ maxWidth: 960 }).watch($resizeNodes);
     },
 
     renderViewControllers = function() {

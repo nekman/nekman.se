@@ -8,9 +8,11 @@ define(
     'underscore'
   ],
 
-  function(BoxView, boxCollection, $, _) {
+  function(BoxView, BoxCollection, $, _) {
 
-    var BoxController = function() {
+    var boxCollection = new BoxCollection(),
+
+    BoxController = function() {
       this.promise = boxCollection.fetch();
       this.$el = $('<section>').attr({id : 'social'});
     },
