@@ -4,8 +4,8 @@ nekman.se
 
 My personal web page, <a href="http://nekman.se">nekman.se</a>. 
 <br/><br/>
-Trying to learn and use a lot of techniques I'm not able to use else where.<br/>
-This is not always very efficient, but it's quite fun :)
+
+This is a "proof of concept" where I try to learn and use a lot of techniques I'm not able to use else where.<br/>
 
 * HTML5
 * CSS3
