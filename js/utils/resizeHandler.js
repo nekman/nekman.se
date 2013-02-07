@@ -2,30 +2,28 @@
 
 define(
   [
-    'jquery'
+    'jquery',
+    'underscore'
   ],
 
-  function($) {
-
-    var DEFAULT_WIDTH = 960,
-      $window = $(window),
-      $resizeNodes,
+  function($, _) {
+    var $resizeNodes,
+        $window = $(window),
     
-    // Handle resize
-    onresize = function() {
-      var width = $window.width();
-      
-      if (width < DEFAULT_WIDTH) {
-        $resizeNodes.removeClass('defaultwidth').addClass('minwidth');
-        return;
+    ResizeHandler = function(args) {
+      if (!_.isObject(args)) {
+        throw 'Expected object literal';
       }
-      
-      if (!$resizeNodes.hasClass('defaultwidth')) {
-        $resizeNodes.addClass('defaultwidth').removeClass('minwidth');
-      }
+
+      _.extend(this, args);
     };
 
-    return {
+    ResizeHandler.prototype = {
+      constructor: ResizeHandler,
+
+     /*
+      * Nodes to watch
+      */
       watch: function($nodes) {
         if (!($nodes instanceof $)) {
           throw 'expected jQuery node';
@@ -34,8 +32,40 @@ define(
         $resizeNodes = $nodes.addClass('defaultwidth');
 
         // Add event handler to window resize, and trigger the event.
-        $window.on('resize', onresize).trigger('resize');
+        $window.on('resize', $.proxy(this.onresize, this)).trigger('resize');
+      },
+
+      /*
+       * Handle window resize event
+       */
+      onresize: function(e) {
+        var width = $window.width();
+
+        if (width < this.maxWidth) {
+          this.handleSmallerThan.call($resizeNodes);
+          return;
+        }
+        
+        if (!$resizeNodes.hasClass('defaultwidth')) {
+          this.handleBiggerThan.call($resizeNodes);
+        }
+      },
+
+      /*
+       * When the window is smaller than the watched width.
+       */
+      handleSmallerThan: function() {
+        $resizeNodes.removeClass('defaultwidth').addClass('minwidth');
+      },
+
+      /*
+       * When the window is bigger than the watched width.
+       */
+      handleBiggerThan: function() {
+        $resizeNodes.addClass('defaultwidth').removeClass('minwidth');
       }
     };
+
+    return ResizeHandler;
   }
 );

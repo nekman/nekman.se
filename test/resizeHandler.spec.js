@@ -1,7 +1,8 @@
 describe('resize handler', function() {
 	require('./testUtils').setup();
 	
-	var resizeHandler = require('../js/utils/resizeHandler'),
+	var ResizeHandler = require('../js/utils/resizeHandler'),
+		resizeHandler = new ResizeHandler({ maxWidth : 960 }),
 		$window = $(window),
 		$node;
 				
@@ -32,6 +33,7 @@ describe('resize handler', function() {
 			};
 
 			// Trigger the window.resize event
+			console.log('trigger resize!')
 			$window.trigger('resize');
 
 			expect($node.hasClass('minwidth')).toBe(true);
