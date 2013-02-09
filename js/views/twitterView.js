@@ -2,22 +2,21 @@
 
 define(
   [
-    './../lib/twitterEntities',
+    'text!./../../templates/twitterTemplate.html',
     'jquery',
     'underscore',
     'backbone'
   ],
   
-  function(twitterEntities, $, _, Backbone) {
+  function(twitterTemplate, $, _, Backbone) {
+
+    var compiled = _.template(twitterTemplate);
 
     return Backbone.View.extend({
       el: '#tweets',
 
       render: function() {
-        
-        this.$el.append(
-          $('<div>').addClass('tweet')
-                    .html(twitterEntities.linkify(this.model)));
+        this.$el.append(compiled(this.model));
 
         return this;
       }

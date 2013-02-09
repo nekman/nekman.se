@@ -3,31 +3,36 @@
 define(
   [
     './../views/stackExchangeView',
-    './../models/stackExchangeCollection',
+    './../collections/jsonpCollection',
     'jquery',
     'underscore'
   ],
 
-  function(StackExchangeView, StackExchangeCollection, $, _) {
+  function(StackExchangeView, JSONPCollection, $, _) {
 
     var StackExchangeController = function() {
-      var stackExchangeCollection = new StackExchangeCollection({ userId : '141363' });
-      this.promise = stackExchangeCollection.fetch();
+      var collection = new JSONPCollection({
+        url: 'http://api.stackoverflow.com/1.1/users/141363/answers?pagesize=5',
+        jsonp: 'jsonp'
+      });
+
+      this.promise = collection.fetch();
     };
 
     StackExchangeController.prototype = {
-      $el: $('<section>').attr({ id: 'stackexchange' }),
+      $el: $('<article>').attr({ id: 'stackexchange' }),
 
       render: function() {
-        this.$el.append($('<h4>').text('Latest answers on stackoverflow'));
-
-        $('#main').append(this.$el);
-
+        
         this.promise.done(function(all) {
-          _.each(_.first(all.answers, 5), function(answer) {
-            var view = new StackExchangeView({ model : answer });
-            view.render();
+          var view = new StackExchangeView({
+            model: {
+              answers: _.first(all.answers, 5),
+              title: 'Latest answers on stackoverflow'
+            }
           });
+
+          view.render();
         });
 
         return this;

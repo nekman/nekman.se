@@ -2,36 +2,48 @@
 
 define(
   [
+    './../lib/twitterEntities',
+    './../collections/jsonpCollection',
     './../views/twitterView',
     'jquery',
     'underscore'
   ],
 
-  function(TwitterView, $, _) {
+  function(twitterEntities, JSONPCollection, TwitterView, $, _) {
     
-    return {
-      $el: $('<section>').attr({ id: 'tweets' }),
+    var TwitterController = function() {
+      var collection = new JSONPCollection({
+        url: 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=nekman&include_entities=true'
+      });
 
-      promise: $.ajax({
-        url: 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=nekman&include_entities=true',
-        dataType: 'jsonp'
-      }),
+      this.promise = collection.fetch();
+    };
+
+    TwitterController.prototype = {
+      $el: $('<article>').attr({ id: 'tweets' }),
 
       render: function() {
-        this.$el.append($('<h4>').text('Latest tweets'));
-
-        $('#main').append(this.$el);
 
         this.promise.done(function(tweets) {
-          _.each(_.first(tweets, 3), function(tweet) {
-            var view = new TwitterView({ model : tweet });
+          
+            var view = new TwitterView({
+              model: {
+                title: 'Latest tweets',
+                tweets: _.first(tweets, 3),
+                linkify: function(tweet) {
+                  return twitterEntities.linkify(tweet);
+                }
+              }
+            });
+
             view.render();
-          });
+          
         });
 
         return this;
       }
     };
 
+    return new TwitterController();
   }
 );

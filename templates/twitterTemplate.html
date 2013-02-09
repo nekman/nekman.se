@@ -1,0 +1,11 @@
+<h4><%= title %></h4>
+
+<% _.each(tweets, function(tweet) { %>  
+
+	<div class="tweet">
+		<%= linkify(tweet) %>
+	</div>
+
+<% }); %>
+
+

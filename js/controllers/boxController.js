@@ -3,7 +3,7 @@
 define(
   [
     './../views/boxView',
-    './../models/boxCollection',
+    './../collections/boxCollection',
     'jquery',
     'underscore'
   ],

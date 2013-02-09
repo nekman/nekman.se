@@ -5,7 +5,7 @@
 
 define(
 	[
-		'text!./../../templates/stackExchange.html',
+		'text!./../../templates/stackExchangeTemplate.html',
 		'jquery',
 		'underscore',
 		'backbone'
