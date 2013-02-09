@@ -16,11 +16,15 @@ css:
 js:
 	r.js -o build.js
 
+#jade to html
+jade:
+	jade index.jade
+
 #run specs with jasmine
 test: 
 	jasmine-node test --verbose
 
-all: css js test
+all: css js test jade
 
-.PHONY: css js test
+.PHONY: css js test jade
 

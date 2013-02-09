@@ -8,6 +8,7 @@
     "url": "git://github.com/nekman/nekman.se.git"
   },
   "dependencies": {
+    "jade": "*",
     "requirejs": "2.1.4",
     "define": "*",
     "less": "1.3.3",
