@@ -13,5 +13,5 @@ This is a "proof of concept" where I try to learn and use a lot of techniques I'
 * <a href="http://requirejs.org">Require.js</a>
 * <a href="http://lesscss.org">Less CSS</a>
 * <a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a>
-* <a href="http://pivotal.github.com/jasmine/">Jasmine</a>
+* <a href="https://jasmine.github.io/">Jasmine</a>
 * Testing and building with <a href="http://nodejs.org">Node.js</a>
